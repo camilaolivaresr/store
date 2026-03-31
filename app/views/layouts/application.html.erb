@@ -24,7 +24,17 @@
   </head>
 
   <body>
-     <main id="main-content">
+    <nav id="nav">
+      <%= link_to root_path, class: "store-logo" do %>
+        🔴 Store
+      <% end %>
+
+      <div class="nav-group nav-group--end">
+        <%= link_to "Logout", destroy_user_session_path, data: { turbo_method: :delete }, class: "btn btn--link" if user_signed_in? %>
+      </div>
+    </nav>
+
+    <main id="main-content">
       <div class="notice"><%= flash[:notice] %></div>
       <div class="alert"><%= flash[:alert] %></div>
 
