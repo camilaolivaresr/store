@@ -2,15 +2,20 @@
   <h1 class="text-title">Products</h1>
 </div>
 
-<div class="products-grid p-2">
+<div class="products-grid">
   <% @products.each do |product| %>
     <div class="card">
       <div class="card-body">
         <h3 class="card-title"><%= product.name %></h3>
+
+        <div class="flex gap-2 mt-3">
+          <%= link_to "View details", product_path(product.id), class: "btn btn--primary btn--block" %>
+        </div>
       </div>
     </div>
   <% end %>
 </div>
+
 
 
 <%= debug @products %>
