@@ -1,6 +1,6 @@
 <div class="container--form">
   <div class="mb-4">
-    <h1 class="text-subheading">New Product</h1>
+    <h1 class="text-subheading">Edit Product</h1>
   </div>
 
   <div class="card">
@@ -8,8 +8,8 @@
       <%= render "form", product: @product %>
     </div>
 
-    <div class="card-footer">
-      <%= link_to "← Cancel", products_path, class: "btn btn--sm" %>
+    <div class="card-footer flex-between">
+      <%= link_to "← Cancel", @product, class: "btn btn--sm" %>
     </div>
   </div>
 </div>
