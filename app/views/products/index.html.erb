@@ -1,5 +1,6 @@
 <div class="text-center mb-4">
   <h1 class="text-title">Products</h1>
+  <%= link_to "✚ New product", new_product_path, class: "btn btn--primary" %>
 </div>
 
 <div class="products-grid">
@@ -9,7 +10,7 @@
         <h3 class="card-title"><%= product.name %></h3>
 
         <div class="flex gap-2 mt-3">
-          <%= link_to "View details", product_path(product.id), class: "btn btn--primary btn--block" %>
+          <%= link_to "View details", product_path(product), class: "btn btn--primary btn--block" %>
         </div>
       </div>
     </div>
