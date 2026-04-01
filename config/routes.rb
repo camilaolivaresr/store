@@ -16,7 +16,7 @@ Rails.application.routes.draw do
 resources :products
 
   get "/products", to: "products#index"
-  # post "/products", to: "products#create"
+  post "/products", to: "products#create"
 
   
 end
