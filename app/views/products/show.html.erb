@@ -5,6 +5,15 @@
 
   <div class="card">
     <div class="grid-2">
+     <div>
+        <% if @product.featured_image.attached? %>
+          <%= image_tag @product.featured_image, class: "product-image" %>
+        <% else %>
+          <div class="product-image-placeholder">
+            📦
+          </div>
+        <% end %>
+
       <div class="card-body">
         <h1 class="text-title">
           <%= @product.name %>

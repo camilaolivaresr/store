@@ -50,7 +50,7 @@ before_action :authenticate_user! , except: %i[ index show ]
     end
 
     def product_params
-      params.require(:product).permit(:name)
+      params.require(:product).permit(:name, :featured_image)
       # params.expect(product: [ :name ])
     end
 end
