@@ -40,7 +40,7 @@ before_action :authenticate_user!, only: %i[ edit update destroy ]
   end
 
   def destroy
-    @product.destroy
+    @product.destroy(params[:id])
     redirect_to products_path, notice: "Product deleted successfully!"
   end
 
