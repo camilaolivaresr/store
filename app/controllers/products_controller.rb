@@ -29,18 +29,22 @@ before_action :authenticate_user!, only: %i[ edit update destroy ]
   end
 
   def edit
+     @product = Product.find(params[:id])
   end
 
   def update
+    @product = Product.find(params[:id])
     if @product.update(product_params)
-      redirect_to @product, notice: "Product updated successfully!"
+      redirect_to @product
     else
       render :edit, status: :unprocessable_entity
     end
+
   end
 
   def destroy
-    @product.destroy(params[:id])
+    @product = Product.find(params[:id])
+    @product.destroy
     redirect_to products_path, notice: "Product deleted successfully!"
   end
 
